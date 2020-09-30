@@ -1,4 +1,5 @@
 FROM tomcat:8.0-alpine
+LABEL maintainer="faheemashique@gmail.com"
+ADD target/java-tomcat-maven-example.war /usr/local/tomcat/webapps/
 EXPOSE 8080
-ADD target/java-tomcat-maven-example.war java-tomcat-maven-example.war
-ENTRYPOINT ["java","-war","/java-tomcat-maven-example.war"]
+CMD ["catalina.sh", "run"]
